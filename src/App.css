@@ -1,0 +1,34 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.pilt {
+  /* width: 100px; */
+  height: 100px;
+}
+
+.pilt:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+.pilt:active {
+  transform: scale(95%);
+}
+
+.nupp {
+  background-color: lightsalmon;
+  color: black ;
+}
+
+.nupp:hover {
+  border-color: seagreen;
+  border-width: 2px;
+}
+
+.nupp:active {
+  text-decoration: underline;
+}
