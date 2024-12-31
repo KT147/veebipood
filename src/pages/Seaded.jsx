@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState } from "react";
+
 
 
 function Seaded() {
@@ -7,10 +8,10 @@ function Seaded() {
   return (
     <div>
         <div>Hetkel aktiivse keele lühend on: {keel}</div>
-        <button onClick={() => setKeel("est")}>eesti</button>
-        <button onClick={() => setKeel("eng")}>english</button>
-        <button onClick={() => setKeel("rus")}>pycckij</button>
-        <button onClick={() => setKeel("esp")}>espanol</button>
+        <button className={keel === "est" ? "keel-aktiivne" : undefined} onClick={() => setKeel("est")}>eesti</button>
+        <button className={keel === "eng" ? "keel-aktiivne" : undefined} onClick={() => setKeel("eng")}>english</button>
+        <button className={keel === "rus" ? "keel-aktiivne" : undefined} onClick={() => setKeel("rus")}>pycckij</button>
+        <button className={keel === "esp" ? "keel-aktiivne" : undefined} onClick={() => setKeel("esp")}>espanol</button>
 
         <br /><br />
 

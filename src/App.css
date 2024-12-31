@@ -5,6 +5,7 @@
   text-align: center;
 }
 
+
 .pilt {
   /* width: 100px; */
   height: 100px;
@@ -31,4 +32,27 @@
 
 .nupp:active {
   text-decoration: underline;
+}
+
+.summa-aktiivne {
+  color: rgb(227 6 140);
+  border-color: rgb(227 6 140);
+  border-width: 2px;
+}
+
+.summa-aktiivne:focus {
+  border-color: rgb(227 6 140);
+  outline: none;
+}
+
+.keel-aktiivne {
+  font-weight: bold;
+}
+
+.linn-aktiivne {
+  text-decoration: underline;
+}
+
+.kuldne {
+  color: goldenrod;
 }

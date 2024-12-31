@@ -13,6 +13,9 @@ import { BrowserRouter } from 'react-router-dom';
 // 4. Tekitama App.jsx sees URLi ja HTMLi vahelisi seoseid
 
 createRoot(document.getElementById('root')).render(
+
+  // teeb topelt renderdamise kõrvalektide leidmiseks --> testkeskkonda
+  // kui läheb live keskkonda, siis automaatikaga tuleb strictmode maha
   <StrictMode>
     <BrowserRouter>
     <App />
