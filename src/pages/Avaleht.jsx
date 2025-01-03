@@ -4,6 +4,17 @@ import { useState } from "react"
 // kui on 1 tegevus, siis võiks seda teha otse onClick sees
 // kui on 2+ tegevust, siis võiks tõsta eraldi funktsiooni
 
+// JavaScriptis on 3 tüüpi väärtusi:
+// number -> teha arvutusi, teha võrdusi kas on suurem/väiksem
+//          kogus, kogusumma
+// string (sõna) -> saan funktsioone kasutada .includes(), .endsWith()
+//          isikukood, postiindeks, telefoninumber, maksmisel erinevad staadiumid
+// boolean -> kahendväärus. true/false. "y"/"n". eriomadus: keerata teistpidi hüüumärgi abil
+//          makstud, registreerunud, sisselogitud, täisealine
+
+// array-d --> üks tüüp sees
+// ["Coca", "Fanta", "Sprite"]
+
 function Avaleht() {
 
     const[kogus, setKogus] = useState(0);
