@@ -1,7 +1,9 @@
 import { useState } from "react"
+import hinnadFailist from "../../data/hinnad.json"
+// ../ -> kausta võrra üles
 
 function Hinnad() {
-    const [hinnad, setHinnad] = useState ([245, 673, 58, 9, 310, 486, 7, 531, 86, 192])
+    const [hinnad, setHinnad] = useState (hinnadFailist)
 
     // const abil loon uusi muutujaid/funktioone, mille sisse panen võrdusmärgiga väärtuse
 
@@ -17,13 +19,18 @@ function Hinnad() {
     }
 
     const sorteeriKahanevalt = () => {
-        hinnad.sort((a, b) => b - a); // muteerib ka originaali
-        setHinnad(hinnad.slice());  //slice() mälukoha kustutamiseks
+        const vastus = hinnad.toSorted((a,b) => b - a);
+        setHinnad(vastus);
+    }
+
+    const originaali = () => {
+        setHinnad(hinnadFailist)
     }
 
 
   return (
     <div>
+        <button onClick={originaali}>Reset sorteeri ja filtreeri</button>
         <div>Hindade arv kokku: {hinnad.length} tk</div>
         <button onClick={sorteeriKasvavalt}>Sorteeri kasvavalt</button>
         <button onClick={sorteeriKahanevalt}>Sorteeri kahanevalt</button>

@@ -22,13 +22,12 @@ function NavigationBar() {
         <button className='nupp'>Seaded</button>
       </Link>
 
-      <Link to= "/lisa-toode">
-        <button className='nupp'>Lisa toode</button>
-      </Link>
-
       <Link to= "/kalkulaator">
         <button className='nupp'>Kalkulaator</button>
       </Link>
+
+      <button onClick={()=> setCount(count+1)}>Vajuta mind {count}</button>
+
 
       <br /><br />
 
@@ -52,10 +51,57 @@ function NavigationBar() {
         <button className='nupp'>Tooted</button>
       </Link>
 
+      <br /><br />
+
+      <Link to= "/halda-esindused">
+        <button className='nupp'>Halda esindused</button>
+      </Link>
+
+      <Link to= "/halda-hinnad">
+        <button className='nupp'>Halda hinnad</button>
+      </Link>
+
+      <Link to= "/halda-pildid">
+        <button className='nupp'>Halda pildid</button>
+      </Link>
+
+      <Link to= "/halda-tootajad">
+        <button className='nupp'>Halda tootajad</button>
+      </Link>
+
+      <Link to= "/halda-tooted">
+        <button className='nupp'>Halda tooted</button>
+      </Link>
+
+      <br /><br />
+
+      <Link to= "/lisa-esindus">
+        <button className='nupp'>Lisa esindus</button>
+      </Link>
+
+      <Link to= "/lisa-hind">
+        <button className='nupp'>Lisa hind</button>
+      </Link>
+
+      <Link to= "/lisa-pilt">
+        <button className='nupp'>Lisa pilt</button>
+      </Link>
+
+      <Link to= "/lisa-tootaja">
+        <button className='nupp'>Lisa töötaja</button>
+      </Link>
+
+      <Link to= "/halda-tooted">
+        <button className='nupp'>Halda tooted</button>
+      </Link>
+
+      <Link to= "/lisa-toode">
+        <button className='nupp'>Lisa toode</button>
+      </Link>
 
 
-      <button onClick={()=> setCount(count+1)}>Vajuta mind {count}</button>
 
+      
     </div>
   )
 }

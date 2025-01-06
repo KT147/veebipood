@@ -1,8 +1,8 @@
 import { useState } from "react"
-
+import pildidJSON from "../../data/pildid.json"
 
 function Pildid() {
-    const [pildid, setPildid] = useState(["/laigitud.svg", "/mittelaigitud.svg", "/vite.svg"]);
+    const [pildid, setPildid] = useState(pildidJSON);
     
     const filtreeriSydamed = () => {
         // result
@@ -22,8 +22,10 @@ function Pildid() {
         setPildid(vastus);
     }
 
+
   return (
     <div>
+
         <div>Kokku: {pildid.length} tk</div>
         <button onClick={sorteeriKasvavalt}>Sorteeri faili nime pikkus kasvavalt</button>
         <button onClick={sorteeriKahanevalt}>Sorteeri faili nime pikkus kahanevalt</button>

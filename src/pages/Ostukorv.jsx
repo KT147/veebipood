@@ -20,11 +20,27 @@ import { useState } from "react"
 function Ostukorv() {
   const [tooted, setTooted] = useState(["Coca", "Fanta", "Sprite"]);
 
+  const kustuta = (index) => {
+    tooted.splice(index,1);
+    setTooted(tooted.slice());
+  }
+
   return (
     <div>
+      {tooted.length === 0 && <div>Ostukorv on tühi</div>}
+
+    {tooted.length > 0 && 
+    <>
       <div>Kokku: {tooted.length} tk</div>
       <button onClick={() => setTooted([])}>Tühjenda</button>
-      {tooted.map (toode => <div key={toode}>{toode} <button>x</button></div>)}
+    </>}
+
+
+      {tooted.map ((toode, index) => 
+        <div key={toode}>
+          {index+1}. {toode} 
+          <button onClick={() => kustuta(index)}>x</button>
+        </div>)}
     </div>
   )
 }
