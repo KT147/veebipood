@@ -54,23 +54,23 @@ function NavigationBar() {
       <br /><br />
 
       <Link to= "/halda-esindused">
-        <button className='nupp'>Halda esindused</button>
+        <button className='nupp'>Halda esindusi</button>
       </Link>
 
       <Link to= "/halda-hinnad">
-        <button className='nupp'>Halda hinnad</button>
+        <button className='nupp'>Halda hindu</button>
       </Link>
 
       <Link to= "/halda-pildid">
-        <button className='nupp'>Halda pildid</button>
+        <button className='nupp'>Halda pilte</button>
       </Link>
 
       <Link to= "/halda-tootajad">
-        <button className='nupp'>Halda tootajad</button>
+        <button className='nupp'>Halda töötajaid</button>
       </Link>
 
       <Link to= "/halda-tooted">
-        <button className='nupp'>Halda tooted</button>
+        <button className='nupp'>Halda tooteid</button>
       </Link>
 
       <br /><br />
@@ -89,10 +89,6 @@ function NavigationBar() {
 
       <Link to= "/lisa-tootaja">
         <button className='nupp'>Lisa töötaja</button>
-      </Link>
-
-      <Link to= "/halda-tooted">
-        <button className='nupp'>Halda tooted</button>
       </Link>
 
       <Link to= "/lisa-toode">

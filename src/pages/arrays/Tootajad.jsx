@@ -1,10 +1,14 @@
 import { useState } from "react"
+import tootajadFailist from "../../data/tootajad.json"
 
 
 function Tootajad() {
   //eesnimed 10x
 
-  const [nimed, setNimed] = useState (["Maria", "Jaan", "Anna", "Marko", "Liis", "Kristjan", "Laura", "Andres", "Elina", "Rasmus"])
+  const [nimed, setNimed] = useState (tootajadFailist)
+
+  const taasta = () => 
+    setNimed(tootajadFailist)
 
   const sorteeriAZ = () => {
     const vastus = nimed.toSorted((a, b) => a.localeCompare(b))
@@ -68,7 +72,10 @@ function Tootajad() {
 
   return (
     <div>
-      <div>Kokku {nimed.length} tk</div>
+      {nimed.length === 0 && <div>Töötajaid pole</div>}
+      {nimed.length > 0 && <div>Kokku {nimed.length} tk</div>}
+      <button onClick={taasta}>Reset sorteeri ja filtreeri</button>
+      <br /><br />
       <button onClick={sorteeriAZ}>Sorteeri A-Z</button>
       <button onClick={sorteeriZA}>Sorteeri A-Z</button>
       <button onClick={sorteeriKasvavalt}>Sorteeri tähtede järgi kasvavalt</button>

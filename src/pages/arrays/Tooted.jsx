@@ -1,7 +1,12 @@
 import { useState } from "react"
+import tootedFailist from "../../data/tooted.json"
 
 function Tooted() {
-  const [tooted, setTooted] = useState (["Nobe", "BMW", "Tesla", "Toyota", "Nissan", "Bentley", "Audi", "Mercedes"]);
+  const [tooted, setTooted] = useState (tootedFailist);
+
+  const taasta = () => {
+    setTooted(tootedFailist)
+  }
 
   const sorteeriAZ = () => {
     const vastus = tooted.toSorted((a, b) => a.localeCompare(b))
@@ -72,7 +77,9 @@ function Tooted() {
 
   return (
     <div>
-      <div>Kokku: {tooted.length} tk</div>
+      <button onClick={taasta}>Reset sorteeri ja filtreeri</button>
+      {tooted.length === 0 && <div>Tooteid ei ole</div>}
+      {tooted.length >0 && <div>Kokku: {tooted.length} tk</div>}
       <button onClick={sorteeriAZ}>Sorteeri A-Z</button>
       <button onClick={sorteeriZA}>Sorteeri A-Z</button>
       <button onClick={sorteeriKasvavalt}>Sorteeri tähtede järgi kasvavalt</button>

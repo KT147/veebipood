@@ -1,26 +1,36 @@
 import { useRef, useState } from "react"
+import tootedFailist from "../../data/tooted.json"
 
 //if () {tõde} else {väär}  põhi
 
 
 function LisaToode() {
-    const [sonum, setSonum] = useState ("Sisesta toode!");
-    const nimiRef = useRef(); //inputi seest andmete kätte saamiseks
 
-    function sisesta () {
-        if (nimiRef.current.value === "") {
+    const toodeRef = useRef ();
+
+    const [sonum, setSonum] = useState ("Sisesta toode!");
+
+    const esimeneSonum = () => {
+        tootedFailist.push(toodeRef.current.value)
+        toodeRef.current.value = ""
+    }
+
+    const teineSonum = () => {
+        if (toodeRef.current.value === "") {
             setSonum("Tühja nimega ei saa toodet sisestada!");
         } else {
             setSonum("Toode sisestatud!");
-        }
-    }
+            esimeneSonum()
+        }}
+
+    
+    
 
   return (
     <div>
-        <div>{sonum}</div>
-        <label>Toote nimi</label> <br />
-        <input ref={nimiRef} type="text" /> <br />
-        <button onClick={sisesta}>Sisesta</button> <br />
+        <div>{sonum}</div> <br />
+        <input ref={toodeRef} type="text" /> <br />
+        <button onClick={teineSonum}>Sisesta</button>
     </div>
   )
 }

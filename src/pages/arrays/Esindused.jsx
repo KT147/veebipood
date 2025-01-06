@@ -1,4 +1,5 @@
 import { useState } from "react"
+import esindusedFailist from "../../data/esindused.json"
 
 // && ---> kui vasakul on tõsi, siis parempoolne näidatakse
 // === ---> vasak ja parem pool on identsed
@@ -17,7 +18,7 @@ import { useState } from "react"
 function Esindused() {
     //muutuja-->HTMLi ja muutja-->onClick külge
     const[linn, setLinn] = useState("Tallinn");
-    const [keskused, setKeskused] = useState(["Ülemiste", "Rocca al Mare", "Magistrali", "Vesse", "Kristiine", "Järveotsa"])
+    const [keskused, setKeskused] = useState(esindusedFailist)
 
     const sorteeriAZ = () => {
         const vastus = keskused.toSorted((a, b) => a.localeCompare(b))
@@ -49,6 +50,9 @@ function Esindused() {
         setKeskused(vastus)
     }
 
+    const originaali = () =>
+        setKeskused(esindusedFailist)
+
   return (
     <div>
         <button className={linn === "Tallinn" ? "linn-aktiivne" : undefined} onClick={() => setLinn("Tallinn")}>Tallinn</button>
@@ -60,10 +64,13 @@ function Esindused() {
 
         <div>Hetkel aktiivne linn: {linn}</div>
 
-        <br /><br />
+        <br />
         {linn === "Tallinn" && 
             <div>
-                <div>Keskuste arv kokku: {keskused.length} tk</div>
+                {keskused.length > 0 && <div>Keskuste arv kokku: {keskused.length} tk</div> }
+                {keskused.length === 0 && <div>Esindusi pole</div>}
+                <button onClick={originaali}>Reset sorteeri ja filtreeri</button>
+                <br /><br />
                 <button onClick={sorteeriAZ}>Sorteeri A-Z</button>
                 <button onClick={sorteeriZA}>Sorteeri Z-A</button>
                 <button onClick={sorteeriKolmasTahtZA}>Sorteeri kolmandast tähest</button>
