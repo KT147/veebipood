@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState } from "react" //use-d: useState, useRef
+import { Link } from "react-router-dom"; //kõik URL-ga seotud asjad
 import esindusedFailist from "../../data/esindused.json"
 
 // && ---> kui vasakul on tõsi, siis parempoolne näidatakse
@@ -53,6 +54,13 @@ function Esindused() {
     const originaali = () =>
         setKeskused(esindusedFailist)
 
+    const arvutaKokku = () => {
+        let sum = 0;
+        /// sama keskused.forEach(keskus => sum = sum + keskus)
+        keskused.forEach(keskus => sum += keskus.length)
+        return sum;
+    }
+
   return (
     <div>
         <button className={linn === "Tallinn" ? "linn-aktiivne" : undefined} onClick={() => setLinn("Tallinn")}>Tallinn</button>
@@ -77,7 +85,13 @@ function Esindused() {
                 <button onClick={filtreeriEgaLoppevad}>Filtreeri &quot;e&quot;-ga lõppevad</button>
                 <button onClick={filtreeri9Tahelised}>Filtreeri 9-tähelised</button>
                 <button onClick={filtreeriNeljasTahtS}>Filtreeri neljas täht S</button>
-                {keskused.map(keskus => <div key={keskus}>{keskus}</div>)}
+
+                {keskused.map((keskus, index) => 
+                <div key={keskus}>
+                    {keskus}
+                    <Link to={"/esindus/" + index}><button>Vt lähemalt</button></Link>
+                    </div>)}
+                <div>Tähed kokku: {arvutaKokku()}</div>
             </div>}
 
         {linn === "Tartu" && 

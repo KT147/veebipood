@@ -1,5 +1,6 @@
 import { useState } from "react"
 import hinnadFailist from "../../data/hinnad.json"
+import { Link } from "react-router-dom"
 // ../ -> kausta võrra üles
 
 function Hinnad() {
@@ -27,6 +28,13 @@ function Hinnad() {
         setHinnad(hinnadFailist)
     }
 
+    const arvutaKokku = () => {
+        //kuna käivitatakse kohe, siis siia useState Set panna ei saa -> jääb loopima
+        let summa = 0;
+        hinnad.forEach(hind => summa= summa + hind);
+        return summa;
+    }
+
 
   return (
     <div>
@@ -35,7 +43,12 @@ function Hinnad() {
         <button onClick={sorteeriKasvavalt}>Sorteeri kasvavalt</button>
         <button onClick={sorteeriKahanevalt}>Sorteeri kahanevalt</button>
         <button onClick={filtreeriSuuremKui100}>Jäta alles suuremad kui 100</button>
-        {hinnad.map(hind => <div key={hind}>{hind}</div>)}
+        {hinnad.map((hind, index) => 
+        <div key={hind}>
+            {hind}
+            <Link to={"/hind/" + index}><button>Vt lähemalt</button></Link>
+            </div>)}
+        <div>Kokku:{arvutaKokku()}</div>
     </div>
   )
 }

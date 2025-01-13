@@ -4,8 +4,7 @@ export default function NotFound() {
   return (
     <div>
 
-      <a>tere</a>
-
+    NotFound
     </div>
   )
 }

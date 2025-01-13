@@ -1,5 +1,6 @@
 import { useState } from "react"
 import tootedFailist from "../../data/tooted.json"
+import { Link } from "react-router-dom"
 
 function Tooted() {
   const [tooted, setTooted] = useState (tootedFailist);
@@ -93,7 +94,11 @@ function Tooted() {
       <button onClick={eslyhendiga}>Filtreeri &quot;es&quot;- lühendit sisaldavad</button>
       <button onClick={teinetahtE}>Filtreeri, kus teine täht on &quot;e&quot;</button>
       <button onClick={paarisarv}>Filtreeri paarisarv tähtedega tooted</button>
-      {tooted.map(toode => <div key={toode}>{toode}</div>)}
+      {tooted.map((toode, index) => 
+      <div key={toode}>
+         {toode}
+        <Link to={"/toode/" + index}><button>Vaata lähemalt</button></Link>
+        </div>)}
     </div>
   )
 }

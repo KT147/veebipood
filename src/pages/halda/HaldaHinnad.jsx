@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import hinnadFailist from "../../data/hinnad.json"
 import { useState } from "react"
 
@@ -18,6 +19,7 @@ function HaldaHinnad() {
               <th>Index</th>
               <th>Hind</th>
               <th>Kustuta</th>
+              <th>Muuda</th>
             </tr>
           </thead>
           <tbody>
@@ -26,6 +28,7 @@ function HaldaHinnad() {
               <td>{index}</td>
               <td>{hind}</td>
               <td><button onClick={() => kustutaHind(index)}>x</button></td>
+              <td><Link to={"/muuda-hind/" + index}><button>Muuda</button></Link></td>
               </tr>)}
           </tbody>
         </table>

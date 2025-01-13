@@ -1,5 +1,6 @@
 import { useState } from "react"
 import tootajadFailist from "../../data/tootajad.json"
+import { Link } from "react-router-dom"
 
 
 function Tootajad() {
@@ -88,7 +89,11 @@ function Tootajad() {
       <button onClick={maSisaldavad}>Filtreeri &quot;Ma&quot;-ga algavad</button>
       <button onClick={teineTahtA}>Filtreeri need, kelle teine täht&quot;a&quot;</button>
       <button onClick={paarituArv}>Filtreeri paaritu arvuga nimed</button>
-      {nimed.map(nimi => <div key={nimi}>{nimi}</div>)}
+      {nimed.map((nimi,index) => 
+      <div key={nimi}>
+        {nimi}
+        <Link to={"/tootaja/" + index}><button>Vt lähemalt</button></Link>
+        </div>)}
     </div>
   )
 }
