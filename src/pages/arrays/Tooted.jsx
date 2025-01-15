@@ -74,6 +74,12 @@ function Tooted() {
     setTooted(vastus)
   }
 
+  const arvutaKokku = () => {
+    let sum = 0
+    tooted.forEach(toode=> sum+= toode.length)
+    return sum;
+  }
+
 
 
   return (
@@ -99,6 +105,7 @@ function Tooted() {
          {toode}
         <Link to={"/toode/" + index}><button>Vaata lähemalt</button></Link>
         </div>)}
+        <div>Tähti kokku: {arvutaKokku()} </div>
     </div>
   )
 }

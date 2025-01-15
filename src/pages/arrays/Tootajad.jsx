@@ -71,6 +71,13 @@ function Tootajad() {
     setNimed(vastus)
   }
 
+  const arvutaKokku = () => {
+    let sum = 0
+    nimed.forEach(nimi=> sum += nimi.length)
+    return sum;
+
+  }
+
   return (
     <div>
       {nimed.length === 0 && <div>Töötajaid pole</div>}
@@ -94,6 +101,7 @@ function Tootajad() {
         {nimi}
         <Link to={"/tootaja/" + index}><button>Vt lähemalt</button></Link>
         </div>)}
+        <div>Tähed kokku: {arvutaKokku()}</div>
     </div>
   )
 }
