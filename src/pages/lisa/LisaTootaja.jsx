@@ -18,4 +18,7 @@ function LisaTootaja() {
   )
 }
 
+// nimi, telefon, amet, kogemus aastates --> 20 && <div> Seenior</div>
+// . push()
+
 export default LisaTootaja

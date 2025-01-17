@@ -28,3 +28,12 @@ createRoot(document.getElementById('root')).render(
 // 3. favicon, font, Firebase üleslaadimine, dünaamiline CSS, componentide väljatõste, kalkulaatorid 
 // 4. Arrays: väljakuvamine, key, sort, filter
 // 5. Arrays: kustutamine (splice), mälukoht (slice), faili tõstmine (.json), lisamine (push)
+// 6. useParams () ühe võtmine. muutmine. early return HTML
+// 7. objektid - võti-väärtus paarid. find(). early return funktsioonis. vormide kontroll onhange abil.
+// 8. localStorage
+
+// KOJU:
+// objektideks: pildid, tootajad, tooted. Võtmed on iga LisaXX sees.
+// kui objektideks, siis peab kõik failid muutma STRING --> OBJECT.VÕTI peale
+// YksToode - nimi, YksTootajad - nimi, YksPilt - id (uus) --> saatma unikaalsuse tunnust URLi
+// LisaToode.jsx

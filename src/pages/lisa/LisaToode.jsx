@@ -18,10 +18,13 @@ function LisaToode() {
     const teineSonum = () => {
         if (toodeRef.current.value === "") {
             setSonum("Tühja nimega ei saa toodet sisestada!");
-        } else {
+            return;
+        }
             setSonum("Toode sisestatud!");
             esimeneSonum()
-        }}
+            // const toode = {nimi: "Nobe", hind: 20, aktiivne: true, pilt: "https:// jpg."} pilt URL-st
+            //. push () faili
+    }
 
     
     

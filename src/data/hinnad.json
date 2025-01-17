@@ -1,1 +1,12 @@
-[245, 673, 58, 9, 310, 486, 7, 531, 86, 192]
+[
+   {"id": 1, "number": 245, "lisaja": "Kevin"},
+   {"id": 2, "number": 673, "lisaja": "Kevin"},
+   {"id": 3, "number": 58, "lisaja": "Kevin"},
+   {"id": 4, "number": 9, "lisaja": "Kevin"},
+   {"id": 5, "number": 310, "lisaja": "Kevin"},
+   {"id": 6, "number": 486, "lisaja": "Kevin"},
+   {"id": 7, "number": 7, "lisaja": "Kevin"},
+   {"id": 8, "number": 531, "lisaja": "Kevin"},
+   {"id": 9, "number": 86, "lisaja": "Kevin"},
+   {"id": 10, "number": 192, "lisaja": "Kevin"}
+]

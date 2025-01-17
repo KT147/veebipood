@@ -19,15 +19,19 @@ function HaldaEsindused() {
             <tr>
               <th>Järjekord</th>
               <th>Keskus</th>
+              <th>Telefon</th>
+              <th>Aadress</th>
               <th>Kustuta</th>
               <th>Muuda</th>
             </tr>
           </thead>
           <tbody>
             {keskused.map((keskus, index) =>
-            <tr key={keskus}>
+            <tr key={keskus.nimi}>
              <td>{index}</td>
-             <td>{keskus}</td>
+             <td>{keskus.nimi}</td>
+             <td>{keskus.tel}</td>
+             <td>{keskus.aadress}</td>
              <td><button onClick={() => kustutaEsindus(index)}>x</button></td>
              <td><Link to={"/muuda-esindus/" + index}><button>Muuda</button></Link></td>
            </tr>)}

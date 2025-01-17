@@ -6,6 +6,7 @@ function LisaPilt() {
     const piltRef = useRef();
 
     const lisa = () =>{
+      // const pilt = {url, pealkiri, sisu}
         pildidJSON.push(piltRef.current.value);
         piltRef.current.value= ""
     }

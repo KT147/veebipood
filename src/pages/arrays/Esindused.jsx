@@ -22,32 +22,32 @@ function Esindused() {
     const [keskused, setKeskused] = useState(esindusedFailist)
 
     const sorteeriAZ = () => {
-        const vastus = keskused.toSorted((a, b) => a.localeCompare(b))
+        const vastus = keskused.toSorted((a, b) => a.nimi.localeCompare(b.nimi))
         setKeskused(vastus)
     }
 
     const sorteeriZA = () => {
-        const vastus = keskused.toSorted((a, b) => b.localeCompare(a))
+        const vastus = keskused.toSorted((a, b) => b.nimi.localeCompare(a.nimi))
         setKeskused(vastus)
     }
 
     const sorteeriKolmasTahtZA = () => {
-        const vastus = keskused.toSorted((a, b) => a[2].localeCompare(b[2]))
+        const vastus = keskused.toSorted((a, b) => a.nimi[2].localeCompare(b.nimi[2]))
         setKeskused(vastus)
     }
 
     const filtreeriEgaLoppevad = () => {
-        const vastus = keskused.filter(keskus => keskus.endsWith("e"))
+        const vastus = keskused.filter(keskus => keskus.nimi.endsWith("e"))
         setKeskused(vastus)
     }
 
     const filtreeri9Tahelised = () => {
-        const vastus = keskused.filter(keskus => keskus.length === 9)
+        const vastus = keskused.filter(keskus => keskus.nimi.length === 9)
         setKeskused(vastus)
     }
 
     const filtreeriNeljasTahtS = () => {
-        const vastus = keskused.filter(keskus => keskus[3] === "s" )
+        const vastus = keskused.filter(keskus => keskus.nimi[3] === "s" )
         setKeskused(vastus)
     }
 
@@ -57,7 +57,7 @@ function Esindused() {
     const arvutaKokku = () => {
         let sum = 0;
         /// sama keskused.forEach(keskus => sum = sum + keskus)
-        keskused.forEach(keskus => sum += keskus.length)
+        keskused.forEach(keskus => sum += keskus.nimi.length)
         return sum;
     }
 
@@ -86,10 +86,10 @@ function Esindused() {
                 <button onClick={filtreeri9Tahelised}>Filtreeri 9-tähelised</button>
                 <button onClick={filtreeriNeljasTahtS}>Filtreeri neljas täht S</button>
 
-                {keskused.map((keskus, index) => 
-                <div key={keskus}>
-                    {keskus}
-                    <Link to={"/esindus/" + index}><button>Vt lähemalt</button></Link>
+                {keskused.map(keskus => 
+                <div key={keskus.nimi}>
+                    {keskus.nimi}
+                    <Link to={"/esindus/" + keskus.nimi}><button>Vt lähemalt</button></Link>
                     </div>)}
                 <div>Tähed kokku: {arvutaKokku()}</div>
             </div>}

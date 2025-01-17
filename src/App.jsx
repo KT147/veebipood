@@ -32,6 +32,9 @@ import MuudaHind from './pages/muuda/MuudaHind';
 import MuudaPilt from './pages/muuda/MuudaPilt';
 import MuudaTootaja from './pages/muuda/MuudaTootaja';
 import MuudaToode from './pages/muuda/MuudaToode';
+import HaldaKasutajad from './pages/auth/HaldaKasutajad';
+import Login from './pages/auth/Login';
+import Registreeru from './pages/auth/Registreeru';
 
 function App() {
 
@@ -65,7 +68,7 @@ function App() {
 
       {/* yks peale sattumiseks ei pane teda Navbari/ Menüüsse, tema peale satun nt Avalehelt või Toodete lehelt: .map() seest*/}
 
-      <Route path="/esindus/:index" element={<YksEsindus/>} />
+      <Route path="/esindus/:nimi" element={<YksEsindus/>} />
       <Route path="/hind/:i" element={<YksHind/>} />
       <Route path="/pilt/:jrknr" element={<YksPilt/>} />
       <Route path="/tootaja/:i" element={<YksTootaja/>} />
@@ -76,6 +79,10 @@ function App() {
       <Route path="/muuda-pilt/:index" element={<MuudaPilt/>} />
       <Route path="/muuda-tootaja/:index" element={<MuudaTootaja/>} />
       <Route path="/muuda-toode/:index" element={<MuudaToode/>} />
+
+      <Route path="/halda-kasutajad" element={<HaldaKasutajad/>} />
+      <Route path="/login" element={<Login/>} />
+      <Route path="/registreeru" element={<Registreeru/>} />
 
 
       <Route path="*" element={<NotFound/>} />
