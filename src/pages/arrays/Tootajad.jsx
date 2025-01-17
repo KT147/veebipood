@@ -12,68 +12,68 @@ function Tootajad() {
     setNimed(tootajadFailist)
 
   const sorteeriAZ = () => {
-    const vastus = nimed.toSorted((a, b) => a.localeCompare(b))
+    const vastus = nimed.toSorted((a, b) => a.nimi.localeCompare(b.nimi))
     setNimed(vastus)
   }
 
   const sorteeriZA = () => {
-    const vastus = nimed.toSorted((a,b) => b.localeCompare(a))
+    const vastus = nimed.toSorted((a,b) => b.nimi.localeCompare(a.nimi))
     setNimed(vastus)
   }
 
   const sorteeriKasvavalt = () => {
-    const vastus = nimed.toSorted((a,b) => a.length - b.length)
+    const vastus = nimed.toSorted((a,b) => a.nimi.length - b.nimi.length)
     setNimed(vastus)
   }
 
   const sorteeriKahanevalt = () => {
-    const vastus = nimed.toSorted((a,b) => b.length - a.length)
+    const vastus = nimed.toSorted((a,b) => b.nimi.length - a.nimi.length)
     setNimed(vastus)
   }
 
   const sorteeriNeljandaTaheJargi = () => {
-    const vastus = nimed.toSorted((a,b) => a[3].localeCompare(b[3]))
+    const vastus = nimed.toSorted((a,b) => a.nimi[3].localeCompare(b.nimi[3]))
     setNimed(vastus)
   }
 
   const sorteeriSonadeArvuJargi = () => {
-    const vastus = nimed.toSorted((a, b) => a.length - b.length)
+    const vastus = nimed.toSorted((a, b) => a.nimi.length - b.nimi.length)
     setNimed(vastus)
   }
 
   const filtreeriS = () => {
-    const vastus = nimed.filter(nimi => nimi.endsWith("s"))
+    const vastus = nimed.filter(nimi => nimi.nimi.endsWith("s"))
     setNimed(vastus);
   }
 
   const filtreeri5tahelised = () => {
-    const vastus = nimed.filter(nimi => nimi.length >= 5)
+    const vastus = nimed.filter(nimi => nimi.nimi.length >= 5)
     setNimed(vastus)
   }
 
   const filtreerit2pselt5 = () => {
-    const vastus = nimed.filter (nimi => nimi.length === 5)
+    const vastus = nimed.filter (nimi => nimi.nimi.length === 5)
     setNimed(vastus)
   }
 
   const maSisaldavad = () => {
-    const vastus = nimed.filter (nimi => nimi.includes("Ma"))
+    const vastus = nimed.filter (nimi => nimi.nimi.includes("Ma"))
     setNimed(vastus)
   }
 
   const teineTahtA = () => {
-    const vastus = nimed.filter (nimi => nimi[1] === "a")
+    const vastus = nimed.filter (nimi => nimi.nimi[1] === "a")
     setNimed(vastus);
   }
 
   const paarituArv = () => {
-    const vastus = nimed.filter (nimi => nimi.length % 2 !== 0)
+    const vastus = nimed.filter (nimi => nimi.nimi.length % 2 !== 0)
     setNimed(vastus)
   }
 
   const arvutaKokku = () => {
     let sum = 0
-    nimed.forEach(nimi=> sum += nimi.length)
+    nimed.forEach(nimi=> sum += nimi.nimi.length)
     return sum;
 
   }
@@ -96,10 +96,10 @@ function Tootajad() {
       <button onClick={maSisaldavad}>Filtreeri &quot;Ma&quot;-ga algavad</button>
       <button onClick={teineTahtA}>Filtreeri need, kelle teine täht&quot;a&quot;</button>
       <button onClick={paarituArv}>Filtreeri paaritu arvuga nimed</button>
-      {nimed.map((nimi,index) => 
-      <div key={nimi}>
-        {nimi}
-        <Link to={"/tootaja/" + index}><button>Vt lähemalt</button></Link>
+      {nimed.map(nimi => 
+      <div key={nimi.nimi}>
+        {nimi.nimi}
+        <Link to={"/tootaja/" + nimi.nimi}><button>Vt lähemalt</button></Link>
         </div>)}
         <div>Tähed kokku: {arvutaKokku()}</div>
     </div>

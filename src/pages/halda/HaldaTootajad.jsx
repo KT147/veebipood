@@ -19,15 +19,21 @@ function Haldatootajad() {
           <tr>
             <th>Järjekord</th>
             <th>Töötaja</th>
+            <th>Telefon</th>
+            <th>Amet</th>
+            <th>Kogemus</th>
             <th>Kustuta</th>
             <th>Muuda</th>
           </tr>
         </thead>
         <tbody>
           {nimed.map((nimi, index) =>
-          <tr key={nimi}>
+          <tr key={nimi.nimi}>
             <td>{index}</td>
-            <td>{nimi}</td>
+            <td>{nimi.nimi}</td>
+            <td>{nimi.telefon}</td>
+            <td>{nimi.amet}</td>
+            <td>{nimi.kogemus}</td>
             <td><button onClick={() => kustutaNimi (index)}>x</button></td> 
             <td><Link to={"/muuda-tootaja/" + index}><button>Muuda</button></Link></td>
         </tr>)}

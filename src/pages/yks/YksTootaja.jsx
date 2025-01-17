@@ -3,8 +3,9 @@ import tootajadFailist from "../../data/tootajad.json"
 
 function YksTootaja() {
 
-  const {i} = useParams()
-  const leitud = tootajadFailist[i]
+  const {nimi} = useParams()
+
+  const leitud = tootajadFailist.find(tootaja => tootaja.nimi === nimi)
 
   if (leitud === undefined) {
     return <div>Töötajat ei leitud</div>
@@ -12,7 +13,10 @@ function YksTootaja() {
 
   return (
     <div>
-      {leitud}
+      <div>Nimi: {leitud.nimi}</div>
+      <div>Telefon: {leitud.telefon}</div>
+      <div>Amet {leitud.amet}</div>
+      <div>Kogemust {leitud.kogemus} aastat</div>
     </div>
   )
 }
