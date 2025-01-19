@@ -10,73 +10,73 @@ function Tooted() {
   }
 
   const sorteeriAZ = () => {
-    const vastus = tooted.toSorted((a, b) => a.localeCompare(b))
+    const vastus = tooted.toSorted((a, b) => a.nimi.localeCompare(b.nimi))
     setTooted(vastus);
   }
 
   const sorteeriZA = () => {
-    const vastus = tooted.toSorted((a, b) => b.localeCompare(a))
+    const vastus = tooted.toSorted((a, b) => b.nimi.localeCompare(a.nimi))
     setTooted(vastus);
   }
 
   const sorteeriKasvavalt = () => {
-    const vastus = tooted.toSorted((a, b) => a.length - b.length)
+    const vastus = tooted.toSorted((a, b) => a.nimi.length - b.nimi.length)
     setTooted(vastus);
   }
 
   const sorteeriKahanevalt = () => {
-    const vastus = tooted.toSorted((a, b) => b.length - a.length)
+    const vastus = tooted.toSorted((a, b) => b.nimi.length - a.nimi.length)
     setTooted(vastus);
   }
 
   const sorteeriTeiseTaheJargi = () => {
-    const vastus = tooted.toSorted((a, b) => a[1].localeCompare(b[1]))
+    const vastus = tooted.toSorted((a, b) => a.nimi[1].localeCompare(b.nimi[1]))
     setTooted(vastus)
   }
 
   const filtreeriN = () => {
-    const vastus = tooted.filter(toode=> toode.startsWith("N"))
+    const vastus = tooted.filter(toode=> toode.nimi.startsWith("N"))
     setTooted (vastus)
   }
 
   const filtreeriB = () => {
-    const vastus = tooted.filter(toode=> toode.startsWith("B"))
+    const vastus = tooted.filter(toode=> toode.nimi.startsWith("B"))
     setTooted (vastus)
   }
 
   const filtreeriT = () => {
-    const vastus = tooted.filter(toode=> toode.startsWith("T"))
+    const vastus = tooted.filter(toode=> toode.nimi.startsWith("T"))
     setTooted (vastus)
   }
 
   const filtreeriKuuetahelised = () => {
-    const vastus = tooted.filter(toode => toode.length === 6)
+    const vastus = tooted.filter(toode => toode.nimi.length === 6)
     setTooted(vastus)
   }
 
   const filtreeriKuniKuuetahelised = () => {
-    const vastus = tooted.filter(toode => toode.length <= 6)
+    const vastus = tooted.filter(toode => toode.nimi.length <= 6)
     setTooted(vastus)
   }
 
   const eslyhendiga = () => {
-    const vastus = tooted.filter(toode => toode.includes("es"))
+    const vastus = tooted.filter(toode => toode.nimi.includes("es"))
     setTooted(vastus)
   }
 
   const teinetahtE = () => {
-    const vastus = tooted.filter(toode => toode[1] === "e")
+    const vastus = tooted.filter(toode => toode.nimi[1] === "e")
     setTooted(vastus)
   }
 
   const paarisarv = () => {
-    const vastus = tooted.filter(toode => toode.length % 2 === 0);
+    const vastus = tooted.filter(toode => toode.nimi.length % 2 === 0);
     setTooted(vastus)
   }
 
   const arvutaKokku = () => {
     let sum = 0
-    tooted.forEach(toode=> sum+= toode.length)
+    tooted.forEach(toode=> sum+= toode.nimi.length)
     return sum;
   }
 
@@ -100,10 +100,10 @@ function Tooted() {
       <button onClick={eslyhendiga}>Filtreeri &quot;es&quot;- lühendit sisaldavad</button>
       <button onClick={teinetahtE}>Filtreeri, kus teine täht on &quot;e&quot;</button>
       <button onClick={paarisarv}>Filtreeri paarisarv tähtedega tooted</button>
-      {tooted.map((toode, index) => 
-      <div key={toode}>
-         {toode}
-        <Link to={"/toode/" + index}><button>Vaata lähemalt</button></Link>
+      {tooted.map(toode => 
+      <div key={toode.nimi}>
+         {toode.nimi}
+        <Link to={"/toode/" + toode.nimi}><button>Vaata lähemalt</button></Link>
         </div>)}
         <div>Tähti kokku: {arvutaKokku()} </div>
     </div>

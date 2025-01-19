@@ -72,7 +72,7 @@ function App() {
       <Route path="/hind/:i" element={<YksHind/>} />
       <Route path="/pilt/:jrknr" element={<YksPilt/>} />
       <Route path="/tootaja/:nimi" element={<YksTootaja/>} />
-      <Route path="/toode/:i" element={<YksToode/>} />
+      <Route path="/toode/:nimi" element={<YksToode/>} />
 
       <Route path="/muuda-esindus/:index" element={<MuudaEsindus/>} />
       <Route path="/muuda-hind/:index" element={<MuudaHind/>} />

@@ -1,1 +1,10 @@
-["Nobe", "BMW", "Tesla", "Toyota", "Nissan", "Bentley", "Audi", "Mercedes"]
+[
+    {"nimi": "Nobe", "hind": 31001, "aktiivne": true, "pilt": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Nobe%2C_GIMS_2019%2C_Le_Grand-Saconnex_%28GIMS0061%29.jpg" },
+    {"nimi": "BWM", "hind": 599, "aktiivne": false, "pilt": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Bmw_e12_v_sst.jpg" },
+    {"nimi": "Tesla", "hind": 61406, "aktiivne": false, "pilt": "https://upload.wikimedia.org/wikipedia/commons/1/14/2018_Tesla_Model_S_75D.jpg" },
+    {"nimi": "Toyota", "hind": 35597, "aktiivne": true, "pilt": "https://upload.wikimedia.org/wikipedia/commons/f/f2/TOYOTA_CAMRY_%28XV80%29_China_%282%29.jpg" },
+    {"nimi": "Nissan", "hind": 28340, "aktiivne": true, "pilt": "https://upload.wikimedia.org/wikipedia/commons/6/62/2017_Nissan_LEAF_%28ZE0_MY17%29_hatchback_%282018-11-02%29_01.jpg" },
+    {"nimi": "Bentley", "hind": 125399, "aktiivne": false, "pilt": "https://upload.wikimedia.org/wikipedia/commons/8/80/2019_Bentley_Flying_Spur_W12_Front.jpg" },
+    {"nimi": "Audi", "hind": 2996, "aktiivne": false, "pilt": "https://upload.wikimedia.org/wikipedia/commons/3/38/Audi_V8_front_20070511.jpg" },
+    {"nimi": "Mercedes", "hind": 82431, "aktiivne": true, "pilt": "https://upload.wikimedia.org/wikipedia/commons/4/43/Mercedes-Benz_W214_IAA_2023_1X7A0270.jpg" }
+]

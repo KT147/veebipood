@@ -1,1 +1,5 @@
-["/laigitud.svg", "/mittelaigitud.svg", "/vite.svg"]
+[
+    {"url": "laigitud.svg", "pealkiri": "laigitud", "sisu": "hall süda"},
+    {"url": "mittelaigitud.svg", "pealkiri": "mittelaigitud", "sisu": "valge süda"},
+    {"url": "vite.svg", "pealkiri": "vite", "sisu": "vite logo pilt"}
+]

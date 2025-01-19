@@ -20,15 +20,21 @@ function HaldaTooted() {
           <tr>
             <th>Järjekord</th>
             <th>Toode</th>
+            <th>Hind</th>
+            <th>Saadavus</th>
+            <th>Pilt</th>
             <th>Kustuta</th>
             <th>Muuda</th>
           </tr>
         </thead>
         <tbody>
           {tooted.map((toode, index) =>
-          <tr key={toode}>
+          <tr key={toode.nimi}>
             <td>{index}</td>
-            <td>{toode}</td>
+            <td>{toode.nimi}</td>
+            <td>{toode.hind} €</td>
+            <td>{toode.aktiivne ? 'Saadaval' : 'Pole saadaval'}</td>
+            <td><img src={toode.pilt} style={{ width: '300px', height: 'auto' }}/></td>
             <td><button onClick={() => kustutaToode (index)}>x</button></td>
             <td><Link to={"/muuda-toode/" + index}><button>Muuda</button></Link></td>
           </tr>)}

@@ -7,23 +7,35 @@ import tootedFailist from "../../data/tooted.json"
 function LisaToode() {
 
     const toodeRef = useRef ();
+    const hindRef = useRef ();
+    const saadavusRef = useRef ();
+    const piltRef = useRef ();
+
 
     const [sonum, setSonum] = useState ("Sisesta toode!");
 
-    const esimeneSonum = () => {
-        tootedFailist.push(toodeRef.current.value)
-        toodeRef.current.value = ""
-    }
 
-    const teineSonum = () => {
+    const sisestus = () => {
         if (toodeRef.current.value === "") {
             setSonum("Tühja nimega ei saa toodet sisestada!");
             return;
         }
-            setSonum("Toode sisestatud!");
-            esimeneSonum()
+
+        setSonum("Toode sisestatud!");
             // const toode = {nimi: "Nobe", hind: 20, aktiivne: true, pilt: "https:// jpg."} pilt URL-st
             //. push () faili
+    
+    const toode = {
+        "nimi": toodeRef.current.value,
+        "hind": hindRef.current.value,
+        "aktiivne" : saadavusRef.current.checked,
+        "pilt" : piltRef.current.value
+      }
+      tootedFailist.push(toode)
+      toodeRef.current.value = ""
+      hindRef.current.value = ""
+      saadavusRef.current.value = false
+      piltRef.current.value = ""
     }
 
     
@@ -32,8 +44,15 @@ function LisaToode() {
   return (
     <div>
         <div>{sonum}</div> <br />
+        <label>Toote nimi</label>
         <input ref={toodeRef} type="text" /> <br />
-        <button onClick={teineSonum}>Sisesta</button>
+        <label>Hind</label>
+        <input ref={hindRef} type="number" /> <br />
+        <label>Saadavus</label>
+        <input ref={saadavusRef} type="checkbox" /> <br />
+        <label>Pilt (URL)</label>
+        <input ref={piltRef} type="text" /> <br />
+        <button onClick={sisestus}>Sisesta</button>
     </div>
   )
 }

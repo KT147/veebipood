@@ -14,7 +14,7 @@ function LisaPilt() {
   return (
     <div>
         <label>Pilt</label> <br />
-        <input ref={piltRef} type="text" placeholder="Sisesta lehekülg" /> <br />
+        <input ref={piltRef} type="text" placeholder="Sisesta URL" /> <br />
         <button onClick={lisa}>Lisa</button> <br />
     </div>
   )

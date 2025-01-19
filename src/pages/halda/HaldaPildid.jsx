@@ -24,7 +24,7 @@ const kustutaKolmas = () => {
       <button disabled={pildid.length < 1} onClick={kustutaEsimene}>Kustuta järjekorras esimene pilt</button>
         <button disabled={pildid.length < 2} onClick={kustutaTeine}>Kustuta järjekorras teine pilt</button>
         <button disabled={pildid.length < 3} onClick={kustutaKolmas}>Kustuta järjekorras kolmas pilt</button>
-        {pildid.map(pilt => <img key={pilt} src={pilt} alt="" /> )}
+        {pildid.map(pilt => <img key={pilt.url} src={pilt.url} alt="" /> )}
     </div>
   )
 }
