@@ -33,8 +33,8 @@ function Pildid() {
         <button onClick={filtreeriSydamed}>Jäta alles südamed</button>
         {pildid.map(pilt => 
             <Link to={"/pilt/" + pilt.url} key={pilt}>
-            <img src={pilt.url} alt="" /> 
-            </Link>
+            <img src={pilt.url} alt="" className="small-image" /> 
+          </Link>
             )}
     </div>
   )

@@ -74,7 +74,7 @@ function Esindused() {
 
         <br />
         {linn === "Tallinn" && 
-            <div>
+            <>
                 {keskused.length > 0 && <div>Keskuste arv kokku: {keskused.length} tk</div> }
                 {keskused.length === 0 && <div>Esindusi pole</div>}
                 <button onClick={originaali}>Reset sorteeri ja filtreeri</button>
@@ -92,13 +92,13 @@ function Esindused() {
                     <Link to={"/esindus/" + keskus.nimi}><button>Vt lähemalt</button></Link>
                     </div>)}
                 <div>Tähed kokku: {arvutaKokku()}</div>
-            </div>}
+            </>}
 
         {linn === "Tartu" && 
-            <div>
+            <>
                 <div>Raatuse</div>
                 <div>Lõunakeskus</div>
-            </div>}
+            </>}
 
         {linn === "Narva" && <div>Fama</div>}
 

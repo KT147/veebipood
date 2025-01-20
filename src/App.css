@@ -1,7 +1,7 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
 }
 
@@ -56,3 +56,13 @@
 .kuldne {
   color: goldenrod;
 }
+
+.dark {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+}
+
+/* .light {
+
+} */

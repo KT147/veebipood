@@ -15,7 +15,7 @@ import Tootajad from './pages/arrays/Tootajad';
 import Tooted from './pages/arrays/Tooted';
 import HaldaEsindused from './pages/halda/HaldaEsindused';
 import HaldaHinnad from './pages/halda/HaldaHinnad';
-import Haldapildid from './pages/halda/Haldapildid';
+import Haldapildid from './pages/halda/HaldaPildid';
 import Haldatootajad from './pages/halda/HaldaTootajad';
 import HaldaTooted from './pages/halda/HaldaTooted';
 import LisaEsindus from './pages/lisa/LisaEsindus';
@@ -35,12 +35,28 @@ import MuudaToode from './pages/muuda/MuudaToode';
 import HaldaKasutajad from './pages/auth/HaldaKasutajad';
 import Login from './pages/auth/Login';
 import Registreeru from './pages/auth/Registreeru';
+import { useState } from 'react';
 
 function App() {
 
+  const [dark, setDark] = useState(localStorage.getItem("dark") || "false");
+
+  const darkMode = () => {
+    setDark("true")
+    localStorage.setItem("dark", "true")
+  }
+
+  const lightMode = () => {
+    setDark("false")
+    localStorage.setItem("dark", "false")
+  }
+
   return (
-    <>
+    <div className={dark === "true" ? "dark": undefined}>
+      <button onClick={darkMode}>Tume taust</button>
+      <button onClick={lightMode}>Hele taust</button>
       <NavigationBar/>
+      
       <Routes>
       <Route path="/" element={<Avaleht/>} />
       <Route path="/ostukorv" element={<Ostukorv/>} />
@@ -88,7 +104,7 @@ function App() {
       <Route path="*" element={<NotFound/>} />
 
     </Routes>
-    </>
+    </div>
   )
 }
 

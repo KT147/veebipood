@@ -40,12 +40,28 @@ function LisaTootaja() {
     kogemusRef.current.value = ""
   }
 
+  const kontrolli = () => {
+    if (telRef.current.value.startsWith ("5") === false) {
+      setSonum("Telefoninumber peab algama numbriga 5");
+      return;
+    }
+    if (telRef.current.value.length < 7) {
+      setSonum("Telefoninumber on liiga lühike");
+      return;
+    }
+    if (telRef.current.value.length > 8) {
+      setSonum("Telefoninumber on liiga pikk");
+      return;
+    }
+    setSonum("");
+  }
+
   return (
     <div>
       <label>Töötaja nimi</label> <br />
       <input ref={tootajaRef} type="text" /> <br />
       <label>Telefon</label> <br />
-      <input ref={telRef} type="number" /> <br />
+      <input onChange={kontrolli} ref={telRef} type="number" /> <br />
       <label>Amet</label> <br />
       <input ref={ametRef} type="text" /> <br />
       <label>Töökogemus aastates</label> <br />

@@ -1,6 +1,7 @@
 import { useState } from "react"
 import tootedFailist from "../../data/tooted.json"
 import { Link } from "react-router-dom"
+// import ostukorvFailist from "../../data/ostukorv.json"
 
 function Tooted() {
   const [tooted, setTooted] = useState (tootedFailist);
@@ -80,6 +81,21 @@ function Tooted() {
     return sum;
   }
 
+  const lisaOstukorvi = (lisatavToode) => {
+    // ostukorvFailist.push(lisatavToode);
+    //.parse võtab jutumärgid maha
+    //.stringify paneb jutumärgid tagasi
+    const ostukorvLS = JSON.parse(localStorage.getItem("ostukorv")) || [];
+    ostukorvLS.push(lisatavToode);
+    localStorage.setItem("ostukorv", JSON.stringify(ostukorvLS));
+  }
+
+  // Array localStorage-sse lisamiseks:
+  // 1. võtma localStorage-st vana seis --> localStorage.getItem()
+  // 2. võtma localStorage-st saadud väärtustelt jutumärgid maha --> JSON.parse()
+  // 3. pushima localStorage-sse juurde --> .push()
+  // 4. lisama jutumärgid juurde --> JSON.stringify()
+  // 5. lisama uuenenud ostukorvi localStorage-sse --> localStorage.setItem()
 
 
   return (
@@ -102,10 +118,12 @@ function Tooted() {
       <button onClick={paarisarv}>Filtreeri paarisarv tähtedega tooted</button>
       {tooted.map(toode => 
       <div key={toode.nimi}>
-         {toode.nimi}
+         <div>{toode.nimi}</div>
+         <div>{toode.hind} €</div>
         <Link to={"/toode/" + toode.nimi}><button>Vaata lähemalt</button></Link>
-        </div>)}
-        <div>Tähti kokku: {arvutaKokku()} </div>
+        <button onClick={() => lisaOstukorvi(toode)}>Lisa ostukorvi</button>
+      </div>)}
+      <div>Tähti kokku: {arvutaKokku()} </div>
     </div>
   )
 }

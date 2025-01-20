@@ -1,4 +1,5 @@
 import { useState } from "react"
+// import ostuKorvFailist from "../data/ostukorv.json"
 
 // Array- mitme väärtuse hoidmiseks [,  ,  ,  ] komaga eraldatud väärtused
 // element - üks väärtus array sees
@@ -18,11 +19,23 @@ import { useState } from "react"
 // renderdamine --> HTMLi väljakuvamine/printimine, koodi näitamine brauseris
 
 function Ostukorv() {
-  const [tooted, setTooted] = useState(["Coca", "Fanta", "Sprite"]);
+  const [tooted, setTooted] = useState(JSON.parse(localStorage.getItem("ostukorv")) || []);
 
   const kustuta = (index) => {
     tooted.splice(index,1);
-    setTooted(tooted.slice());
+    setTooted(tooted.slice()) //HTML uuenduseks
+    localStorage.setItem("ostukorv", JSON.stringify(tooted)); //Localstorage uuenduseks
+  }
+
+  const arvutaKokku = () =>  {
+    let summa = 0;
+    // forEach peab tegema mingi tegevuse(tal endal pole eriomadust, käib lihtsalt läbi)
+    //praegu anname iga tsükli iteratsioon summa muutujale uue väärtuse
+    // summa = 0
+    // ({Nobe, hind: 12} => 12  = 0 + 12)
+    // summa = 12
+    tooted.forEach(toode => summa = summa + toode.hind )
+    return summa;
   }
 
   return (
@@ -37,10 +50,12 @@ function Ostukorv() {
 
 
       {tooted.map ((toode, index) => 
-        <div key={toode}>
-          {index+1}. {toode} 
+        <div key={index}>
+          {index+1}. {toode.nimi} - {toode.hind} €
           <button onClick={() => kustuta(index)}>x</button>
         </div>)}
+
+        {tooted.length > 0 && <div>Kokku: {arvutaKokku()} €</div>}
     </div>
   )
 }

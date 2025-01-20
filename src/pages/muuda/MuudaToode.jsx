@@ -14,7 +14,7 @@ function MuudaToode() {
     const muuda = () => {
       tootedFailist[index] = {
         "nimi": toodeRef.current.value,
-        "hind": Number(toodeRef.current.value),
+        "hind": hindRef.current.value,
         "aktiivne": saadavusRef.current.checked,
         "pilt": piltRef.current.value
     }}

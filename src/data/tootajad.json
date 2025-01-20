@@ -4,9 +4,9 @@
    {"nimi": "Anna", "telefon": "51423443", "amet": "insener", "kogemus": 10},
    {"nimi": "Marko", "telefon": "5434223", "amet": "politseinik", "kogemus": 1},
    {"nimi": "Liis", "telefon": "51232423", "amet": "müüja", "kogemus": 5},
-   {"nimi": "Kristjan", "telefon": "517628332", "amet": "õpetaja", "kogemus": 18},
-   {"nimi": "Laura", "telefon": "5352724944", "amet": "arst", "kogemus": 7},
-   {"nimi": "Andres", "telefon": "582729332", "amet": "piloot", "kogemus": 2},
+   {"nimi": "Kristjan", "telefon": "51762833", "amet": "õpetaja", "kogemus": 18},
+   {"nimi": "Laura", "telefon": "53527249", "amet": "arst", "kogemus": 7},
+   {"nimi": "Andres", "telefon": "58272932", "amet": "piloot", "kogemus": 2},
    {"nimi": "Elina", "telefon": "535792032", "amet": "barista", "kogemus": 11},
    {"nimi": "Rasmus", "telefon": "50282719", "amet": "fotograaf", "kogemus": 6}
 ]
