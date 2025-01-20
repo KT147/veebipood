@@ -1,5 +1,6 @@
 import { useRef, useState } from "react"
 import tootedFailist from "../../data/tooted.json"
+import { ToastContainer, toast } from 'react-toastify';
 
 //if () {tõde} else {väär}  põhi
 
@@ -17,10 +18,21 @@ function LisaToode() {
 
     const sisestus = () => {
         if (toodeRef.current.value === "") {
-            setSonum("Tühja nimega ei saa toodet sisestada!");
-            return;
+          toast.error("Nimi on kohustuslik");
+          return;
+        } 
+        if (hindRef.current.value === "") {
+          toast.error("Hind on kohustuslik")
+          return;
         }
-
+        if (!saadavusRef.current.checked) {
+          toast.error ("Toode peab olema saadaval")
+        return;
+        }
+        if (piltRef.current.value === "") {
+          toast.error("Pilt on kohustuslik")
+        }
+        else
         setSonum("Toode sisestatud!");
             // const toode = {nimi: "Nobe", hind: 20, aktiivne: true, pilt: "https:// jpg."} pilt URL-st
             //. push () faili
@@ -53,6 +65,13 @@ function LisaToode() {
         <label>Pilt (URL)</label>
         <input ref={piltRef} type="text" /> <br />
         <button onClick={sisestus}>Sisesta</button>
+
+        <ToastContainer
+        position="bottom-right"
+        autoClose={4000}
+        closeOnClick
+        draggable
+        theme="dark" />
     </div>
   )
 }
