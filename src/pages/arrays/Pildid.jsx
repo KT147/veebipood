@@ -32,7 +32,7 @@ function Pildid() {
         <button onClick={sorteeriKahanevalt}>Sorteeri faili nime pikkus kahanevalt</button>
         <button onClick={filtreeriSydamed}>Jäta alles südamed</button>
         {pildid.map(pilt => 
-            <Link to={"/pilt/" + pilt.url} key={pilt}>
+            <Link to={"/pilt/" + pilt.id} key={pilt}>
             <img src={pilt.url} alt="" className="small-image" /> 
           </Link>
             )}

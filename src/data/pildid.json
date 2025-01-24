@@ -1,5 +1,5 @@
 [
-    {"url": "laigitud.svg", "pealkiri": "laigitud", "sisu": "hall süda"},
-    {"url": "mittelaigitud.svg", "pealkiri": "mittelaigitud", "sisu": "valge süda"},
-    {"url": "vite.svg", "pealkiri": "vite", "sisu": "vite logo pilt"}
+    {"id": 1, "url": "/laigitud.svg", "pealkiri": "laigitud", "sisu": "hall süda"},
+    {"id": 2, "url": "/mittelaigitud.svg", "pealkiri": "mittelaigitud", "sisu": "valge süda"},
+    {"id": 3, "url": "/vite.svg", "pealkiri": "vite", "sisu": "vite logo pilt"}
 ]

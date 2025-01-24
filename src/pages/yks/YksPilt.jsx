@@ -3,8 +3,8 @@ import pildidFailist from "../../data/pildid.json"
 
 
 function YksPilt() {
-  const {jrknr} = useParams();
-  const leitud = pildidFailist.find(pilt=> pilt.url === jrknr);
+  const {id} = useParams();
+  const leitud = pildidFailist.find(pilt=> pilt.id === Number(id));
 
   if (leitud === undefined) {
     return <div>
@@ -14,7 +14,7 @@ function YksPilt() {
 
   return (
     <div>
-      <img src={"/" + leitud.url} alt={leitud.pealkiri} />
+      <img src={leitud.url} alt={leitud.pealkiri} />
     </div>
   )
 }

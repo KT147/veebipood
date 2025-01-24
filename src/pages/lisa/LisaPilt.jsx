@@ -24,6 +24,7 @@ function LisaPilt() {
       toast.success("Pilt edukalt lisatud!")
 
     const pilt ={
+      "id": pildidJSON.length +1,
       "url": piltRef.current.value,
       "pealkiri":nimiRef.current.value,
       "sisu" : kirjelduRef.current.value

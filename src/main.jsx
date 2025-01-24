@@ -32,6 +32,8 @@ createRoot(document.getElementById('root')).render(
 // 7. objektid - võti-väärtus paarid. find(). early return funktsioonis. vormide kontroll onhange abil.
 // 8. Toastify. vormide kontroll onChange abil. localStorage. 
 // 9. API
+// 10. Viimast korda veebipoodi: tõlked, Bootstrap, MUI, e-maili saatmine
+// 11. Webshop
 
 // KOJU:
 // objektideks: pildid. Vt ka lisamine ja muutmine

@@ -6,9 +6,17 @@ function NavigationBar() {
     const [count, setCount] = useState(0) //algväärtus e refreshi järgne väärtus
   return (
     <div>
+      <Link to= "/api-home">
+        <button className='nupp'>Api Home</button>
+      </Link>
+
+      <br /><br />
+
         <Link to ="/">
         <img className='pilt' src="https://cuadriciclos.es/wp-content/uploads/2023/07/Nobe-100-1-1-1024x576.jpg" alt="" />
       </Link>
+
+      <br /><br />
 
       <Link to= "/login">
         <button className='nupp'>Logi sisse</button>
@@ -107,7 +115,7 @@ function NavigationBar() {
         <button className='nupp'>Lisa toode</button>
       </Link>
 
-
+      <br /><br />
 
       
     </div>
