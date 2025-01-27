@@ -1,6 +1,7 @@
 import { useState } from "react" //use-d: useState, useRef
 import { Link } from "react-router-dom"; //kõik URL-ga seotud asjad
 import esindusedFailist from "../../data/esindused.json"
+import { useTranslation } from 'react-i18next';
 
 // && ---> kui vasakul on tõsi, siis parempoolne näidatakse
 // === ---> vasak ja parem pool on identsed
@@ -17,6 +18,9 @@ import esindusedFailist from "../../data/esindused.json"
 
 
 function Esindused() {
+
+    const { t } = useTranslation();
+
     //muutuja-->HTMLi ja muutja-->onClick külge
     const[linn, setLinn] = useState("Tallinn");
     const [keskused, setKeskused] = useState(esindusedFailist)
@@ -70,13 +74,13 @@ function Esindused() {
 
         <br /><br />
 
-        <div>Hetkel aktiivne linn: {linn}</div>
+        <div>{t('currently-active-city')} : {linn}</div>
 
         <br />
         {linn === "Tallinn" && 
             <>
-                {keskused.length > 0 && <div>Keskuste arv kokku: {keskused.length} tk</div> }
-                {keskused.length === 0 && <div>Esindusi pole</div>}
+                {keskused.length === 0 && <div>{t('no-shops')}</div>}
+                {keskused.length > 0 && <div>{t('shops-total-number')}: {keskused.length} tk</div>}
                 <button onClick={originaali}>Reset sorteeri ja filtreeri</button>
                 <br /><br />
                 <button onClick={sorteeriAZ}>Sorteeri A-Z</button>

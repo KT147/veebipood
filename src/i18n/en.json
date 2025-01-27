@@ -1,0 +1,11 @@
+{
+    "currently-active-city": "Currently active city",
+    "shops-total-number" : "Total number of shops",
+    "no-shops": "There are no shops",
+    "plural": "s",
+    "nav": {
+      "login": "Login",
+      "signup": "Sign up",
+      "cart" : "Cart"
+    }
+}

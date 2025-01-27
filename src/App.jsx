@@ -48,6 +48,9 @@ import Electricity from './pages/api/Electricity';
 import Floods from './pages/api/Floods';
 import Vocabulary from './pages/api/Vocabulary';
 import ApiHome from './pages/api/ApiHome';
+import AdminHome from './pages/AdminHome';
+import ArraysHome from './pages/arrays/ArraysHome';
+import { ContactUs } from './pages/ContactUs';
 
 function App() {
 
@@ -65,10 +68,9 @@ function App() {
 
   return (
     <div className={dark === "true" ? "dark": undefined}>
+      <NavigationBar/>
       <button onClick={darkMode}>Tume taust</button>
       <button onClick={lightMode}>Hele taust</button>
-      <br /><br />
-      <NavigationBar/>
       
       <Routes>
       <Route path="/" element={<Avaleht/>} />
@@ -125,6 +127,10 @@ function App() {
       <Route path="/floods" element={<Floods/>} />
       <Route path="/vocabulary" element={<Vocabulary/>} />
       <Route path="/api-home" element={<ApiHome/>} />
+      <Route path="/admin" element={<AdminHome/>} />
+      <Route path="/arrays" element={<ArraysHome/>} />
+      
+      <Route path="/contact" element={<ContactUs/>} />
 
       <Route path="*" element={<NotFound/>} />
 

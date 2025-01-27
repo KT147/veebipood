@@ -1,8 +1,11 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
+import './i18n';
+import App from './App.jsx';
 import { BrowserRouter } from 'react-router-dom';
+
 
 // Navigeerimiseks on vajalik
 // 1. alla laadima navigeerimiseks vajaliku koodi
@@ -32,7 +35,7 @@ createRoot(document.getElementById('root')).render(
 // 7. objektid - võti-väärtus paarid. find(). early return funktsioonis. vormide kontroll onhange abil.
 // 8. Toastify. vormide kontroll onChange abil. localStorage. 
 // 9. API
-// 10. Viimast korda veebipoodi: tõlked, Bootstrap, MUI, e-maili saatmine
+// 10. Viimast korda veebipoodi: tõlked, Bootstrap, MUI, e-maili saatmine, Leaflet
 // 11. Webshop
 
 // KOJU:

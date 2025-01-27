@@ -1,0 +1,11 @@
+{
+    "currently-active-city": "Hetkel aktiivne linn",
+    "shops-total-number" : "Keskuseid kokku",
+    "no-shops": "Esindusi pole",
+    "plural": "d",
+    "nav": {
+      "login": "Logi sisse",
+      "signup": "Registreeru",
+      "cart" : "Ostukorv"
+    }
+  }
